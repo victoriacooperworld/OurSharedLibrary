@@ -1,0 +1,5 @@
+/* pages/Home/userbook/userbook.wxss */
+page{
+  padding-bottom: 250rpx;
+  background:white
+}

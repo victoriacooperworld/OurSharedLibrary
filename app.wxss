@@ -1,0 +1,12 @@
+/**app.wxss**/
+@import "colorui.wxss";
+@import "icon.wxss";
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 250rpx 0;
+  box-sizing: border-box;
+} 

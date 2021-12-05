@@ -1,0 +1,60 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/mine/login/login",
+    "pages/Author/hgm/hgm",
+    "pages/Author/yjw/yjw",
+    "pages/Author/nsh/test",
+    "pages/logs/logs",
+    "pages/Author/mbw/mbw",
+    "pages/mine/register/register",
+    "pages/Home/search/search",
+    "pages/Home/Home",
+    "pages/mine/mine",
+    "pages/publish/publish",
+    "pages/content/content",
+    "pages/content/book/book",
+    "pages/publish/needs/needs",
+    "pages/publish/upload/upload",
+    "pages/mypublish/content",
+    "pages/mypublish/book/book",
+    "pages/Home/userbook/userbook"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "OurSharedLibrary",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/Home/Home",
+        "text": "首页",
+        "iconPath": "image/icon-home.png",
+        "selectedIconPath": "image/icon-home-SP.png"
+      },
+      {
+        "pagePath": "pages/content/content",
+        "text": "书库",
+        "iconPath": "image/icon-zonghe.png",
+        "selectedIconPath": "image/icon-zonghe-SP.png"
+      },
+      {
+        "pagePath": "pages/publish/publish",
+        "text": "上传",
+        "iconPath": "image/icon-oss.png",
+        "selectedIconPath": "image/icon-oss-SP.png"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "text": "我的",
+        "iconPath": "image/icon-mine.png",
+        "selectedIconPath": "image/icon-mine-SP.png"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

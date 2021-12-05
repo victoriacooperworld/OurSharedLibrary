@@ -1,0 +1,83 @@
+<!--pages/content/book/book.wxml-->
+<scroll-view scroll-x class="bg-white nav text-center fixed" style="top:{{CustomBar}}px">
+ <view class="cu-bar bg-green">
+    <view class="action" bindtap="BackToCon">
+      <text class="cuIcon-back text-white"></text> 返回
+    </view>
+    <view class="content text-bold">
+      商品详情
+    </view>
+  </view>
+</scroll-view>
+
+<!--商品幻灯片-->
+<swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" class="banner" duration="{{duration}}" circular="{{duration}}">
+  <block wx:for="{{goods_img}}" wx:key="goods_info">
+    <swiper-item>
+      <image src="{{imghref}}{{item.img}}" class="slide-image" mode="aspectFill" data-src='{{imghref}}{{item.img}}' bindtap="previewImage"/>
+    </swiper-item>
+  </block>
+</swiper>
+<view class="info-title">
+    <text>{{goods_info.goods_title}}</text>
+</view>
+<view class="cu-list menu {{menuBorder?'sm-border':''}} {{menuCard?'card-menu margin-top':''}}">
+    <!--<view class="cu-item {{menuArrow?'arrow':''}}">
+      <view class="content">
+        <text class="cuIcon-circlefill text-grey"></text>
+        <text class="text-grey"> <text>{{goods_info.goods_title}}</text></text>
+      </view>
+      <text class="cuIcon-right lg text-gray"></text>
+    </view>-->
+      <view class="cu-item {{menuArrow?'arrow':''}}">
+      <view class="content">
+        <text class="text-grey">作者</text>
+      </view>
+    </view>
+        <view class="cu-item {{menuArrow?'arrow':''}}">
+      <view class="content">
+        <text class="text-grey">出版社</text>
+      </view>
+    </view>
+  
+</view>
+<block wx:if="{{pjDataList!=''}}">
+  <!--评价-->
+  <view class='pj_box'>
+ <view class="cu-bar bg-white" >
+    <view class="action sub-title" style="margin-left:0rpx">
+      <text class="text-xl text-bold text-green">商品评价</text>
+      <text class="bg-green"></text>
+      <!-- last-child选择器-->
+    </view>
+  </view>
+  <!--<view style="height:40px;line-height: 40px;border-bottom:1px solid #f5f5f5;">
+     <view style='float:left;'>商品评价</view>
+     <view style='float:right;margin-left:2px;margin-top:-1px;'>
+        <image src="/img/ico_jt.png" class="ico_img_jt"></image>
+     </view>
+     <view style='float:right;font-size:12px;color:#A2A2A2;'>
+        <navigator url="pjList?id={{goods_id}}">查看全部</navigator>
+     </view>
+     <view class='clear'></view>
+    </view>-->
+    <block wx:for="{{pjDataList}}" wx:for-item="item" wx:key="pj">
+      <view class="list_item">
+        <view class='pj_u_info clear'>
+          <view class='header_img'><image src="{{item.headpic}}" mode="aspectFit"></image></view>
+          <view class='name'>{{item.author}}</view>
+          <view class='time'>{{item.add_time}}</view>
+        </view>
+        <view class='pj_cont'>
+          {{item.content}}
+        </view>
+      </view>
+    </block>
+</view>
+</block>
+<!--底部浮动 start-->
+<view class="cu-bar foot input {{InputBottom!=0?'cur':''}}" style="bottom:{{InputBottom}}px">
+  <input class="solid-bottom" bindfocus="InputFocus" bindblur="InputBlur" adjust-position="{{false}}" focus="{{false}}" maxlength="300" cursor-spacing="10" placeholder="留下您的评论吧"></input>
+  <button class="cu-btn bg-green shadow" style="width: 70px;height: 30px;margin-right:10px">评论</button>
+  <button class="cu-btn bg-green shadow" style="width: 70px;height: 30px;">联系Ta</button>
+</view>

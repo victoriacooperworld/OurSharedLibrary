@@ -1,0 +1,14 @@
+<view class="info_layout">
+
+<h2>个人介绍</h2>
+
+<image class="img1" style="width:200px; height:250px" src="http://m.qpic.cn/psc?/V11GK7bN0OlUZJ/F1H7YF3BXM1Q*sygiHZL4elMEbhPcamjP2U8Sk54QZfH2vW1Z8QBgZysS14bzASsBm38AHcfPzuS8u*.Umr3rHjDoWzrjGkqvnqZhHIyKk0!/b&bo=VAMkBAAAAAADRxU!&rf=viewer_4" mode="aspectFit"></image>
+
+<h1>Name：Shuaihua Niu 牛帅华</h1>
+Student
+<br></br>
+Amature Photographer
+<br></br>
+Welcome to my silly world!
+<button type="default" bindtap="jump1">Next</button>
+</view>

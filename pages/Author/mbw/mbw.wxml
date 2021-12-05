@@ -1,0 +1,7 @@
+<!--pages/mbw/mbw.wxml-->
+<view class = "container">
+
+<image  src="http://m.qpic.cn/psc?/V11GK7bN0OlUZJ/F1H7YF3BXM1Q*sygiHZL4aLtRMDr2LXOa7X2cgaJvIZ0.yQdZIu8eS4VKZ3yaGR4mvSa4ZPJ*YfT2*een66cy*ZsjFCTZggIrPXU5Yh6FZo!/b&bo=OAQ4BAAAAAARJxA!&rf=viewer_4" mode="aspectFill"></image>
+<h1>个人介绍</h1>
+<button type="default" bindtap="jump4">返回首页</button>
+</view>

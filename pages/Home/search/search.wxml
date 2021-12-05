@@ -1,0 +1,39 @@
+<scroll-view scroll-x class="bg-white nav text-center fixed" style="top:{{CustomBar}}px">
+	<view class="cu-bar bg-white search">
+		<view class="search-form round">
+			<text class="cuIcon-search"></text>
+			<input type="text" bindinput="Input" placeholder="搜索书名、作者、类别" confirm-type="search"></input>
+		</view>
+		<view class="action">
+			<button class="cu-btn bg-green shadow-blur round" bindtap="sou" style="width:70px;height: 30px;">搜索</button>
+		</view>
+	</view>
+</scroll-view>
+<view class="cu-bar bg-white solid-bottom"></view>
+	<view class="cu-form-group">
+			<view class="title">筛选条件</view>
+			<picker bindchange="PickerChange" value="{{index}}" range="{{picker}}">
+				<view class="picker">
+					{{index?picker[index]:'请选择关键字范围'}}
+				</view>
+			</picker>
+		</view>
+<view class="cu-card article {{isCard?'no-card':''}}" catchtap="gotoresult"  wx:for='{{searchShow}}' wx:key='searchShow' wx:for-item="item" id="{{item._id}}" >
+  <view class="cu-item shadow" id="{{item._id}}" >
+    <view class="title" id="{{item._id}}">
+      <view class="text-cut"  id="{{item._id}}" >{{item.name}} {{item.author}} </view>
+    </view>
+    <view class="content" id="{{item._id}}">
+      <image id="{{item._id}}" src="{{imghref}}{{item.imgList[0]}}" mode="aspectFill"></image>
+      <view class="desc" id="{{item._id}}">
+			<view class="text-gray" id="{{item._id}}">{{item.press}}</view>
+			<view class="text-gray" id="{{item._id}}">{{item.newLevel}}</view>
+      <view class='text-gray' id="{{item._id}}">￥{{item.price}}</view>
+        <view>
+          <view class="cu-tag bg-green light sm round" id="{{item._id}}">{{item.type}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+

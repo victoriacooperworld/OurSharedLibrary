@@ -1,0 +1,78 @@
+<!--pages/Home/userbook/userbook.wxml-->
+<view class="cu-chat">
+	<block wx:if="{{scroll==0}}">
+		<view class="cu-bar bg-white">
+			<view class="action">
+				<text class="cuIcon-titles text-green"></text>
+				<text class="text-xl text-bold">用户登录注册</text>
+			</view>
+		</view>
+    <view class="bg-white padding">
+		<text class="text-lg text-black text-bold">点击“进入应用”</text>
+    </view>
+		<image class="margin-top-lg" src="http://i1.fuimg.com/722480/5272851dc57a3730.png" mode="aspectFit"> </image>
+    <view class="bg-white padding margin-top-lg">
+		<text class="text-lg text-black text-bold">点击“我的”--点击“登录/注册”--完成用户登录</text>
+    </view>
+		<image class="margin-top-lg" src="http://i1.fuimg.com/722480/4d85bbe4ef262fbd.png" mode="aspectFit"> </image>
+	</block>
+	<block wx:if="{{scroll==1}}">
+		<view class="cu-bar bg-white">
+			<view class="action">
+				<text class="cuIcon-titles text-green"></text>
+				<text class="text-xl text-bold">搜索功能</text>
+			</view>
+		</view>
+    <view class="bg-white padding">
+	  <text class="text-lg text-black text-bold">在首页点击“类别”实现按类别搜索</text>
+    </view>
+		<image class="margin-top-lg" src="http://i1.fuimg.com/722480/0ef073807a1cb23e.png" mode="aspectFit"> </image>
+    <view class="bg-white padding margin-top-lg">
+		<text class="text-lg text-black text-bold">在首页/书库页面的搜索框进行关键字、作者、类别搜索</text>
+    </view>
+		<image class="margin-top-lg" src="http://i1.fuimg.com/722480/49ca41fd62898eaa.png" mode="aspectFit"> </image>
+    <view class="bg-white padding margin-top-lg">
+    <text class="text-lg text-black text-bold">点击“书库”在筛选条件中进行书名、作者、类别等范围进行筛选</text>
+    </view>
+		<image class="margin-top-lg" src="http://i1.fuimg.com/722480/109c74f96d2c579e.png" mode="aspectFit"> </image>
+	</block>
+	<block wx:if="{{scroll==2}}">
+		<view class="cu-bar bg-white">
+			<view class="action">
+				<text class="cuIcon-titles text-green"></text>
+				<text class="text-xl text-bold">上传二手书/发布需求</text>
+			</view>
+		</view>
+    <view class="bg-white padding">
+	  <text class="text-lg text-black text-bold">登录成功后，点击“上传”</text>
+    </view>
+		<image class="margin-top-lg" src="http://i1.fuimg.com/722480/c4af465a9e960624.png" mode="aspectFit"> </image>
+    <view class="bg-white padding margin-top-lg">
+    <text class="text-lg text-black text-bold">根据用户需求选择相应按钮发布信息</text>	
+    </view>
+	</block>
+	<block wx:if="{{scroll==3}}">
+  <view class="cu-bar bg-white">
+			<view class="action">
+				<text class="cuIcon-titles text-green"></text>
+				<text class="text-xl text-bold">修改/删除信息</text>
+			</view>
+	</view>
+  <view class="bg-white padding">
+	  <text class="text-lg text-black text-bold">登录成功后，点击“我的”--点击“我的书架”</text>
+    </view>
+		<image class="margin-top-lg" src="http://i1.fuimg.com/722480/837424e7abeb6897.png" mode="aspectFit"> </image>
+    <view class="bg-white padding margin-top-lg">
+    <text class="text-lg text-black text-bold">点击“删除/修改”按钮完成相关操作</text>
+    </view>
+    <image class="margin-top-lg" src="http://i1.fuimg.com/722480/7928ebba37006055.png" mode="aspectFit"> </image>
+	</block>
+</view>
+
+<view class="cu-bar foot">
+	<scroll-view scroll-x class="bg-white padding response cu-steps steps-bottom " scroll-into-view="scroll-{{scroll}}" scroll-with-animation>
+		<view class="cu-item {{index>scroll?'':'text-green'}} padding-lr-xl" wx:for="{{4}}" wx:key id="scroll-{{index}}">
+			Step {{index + 1}} <text class="num" id="{{index}}" data-index="{{index + 1}}" catchtap="scrollSteps"></text>
+		</view>
+	</scroll-view>
+</view>

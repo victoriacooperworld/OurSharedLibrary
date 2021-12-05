@@ -1,0 +1,87 @@
+<!--pages/Home/Home.wxml-->
+<!--顶部搜索栏-->
+<scroll-view scroll-x class="bg-white nav text-center fixed" style="top:{{CustomBar}}px">
+	<view class="cu-bar bg-white search">
+		<view class="search-form round">
+			<text class="cuIcon-search"></text>
+			<input type="text" bindinput="INput" placeholder="搜索书名、作者、类别" confirm-type="search"></input>
+		</view>
+		<view class="action">
+			<button class="cu-btn bg-green shadow-blur round1" bindtap="jumptosearch" style="width:70px;height: 30px;">搜索</button>
+		</view>
+	</view>
+</scroll-view>
+<view class="cu-bar bg-white solid-bottom">
+</view>
+<!--轮播图-->
+<swiper class="card-swiper {{DotStyle?'square-dot':'round-dot'}}" indicator-dots="true" circular="true" autoplay="true" interval="5000" duration="500" bindchange="cardSwiper" indicator-color="#8799a3" indicator-active-color="#0081ff">
+	<swiper-item wx:for="{{swiperList}}" wx:key class="{{cardCur==index?'cur':''}}">
+		<view class="swiper-item">
+			<image src="{{item.url}}" mode="aspectFill" wx:if="{{item.type=='image'}}"></image>
+			<video src="{{item.url}}" autoplay loop muted show-play-btn="{{false}}" controls="{{false}}" objectFit="cover" wx:if="{{item.type=='video'}}"></video>
+		</view>
+	</swiper-item>
+</swiper>
+
+<!--列表-->
+<view class="grid col-3 margin-bottom text-center">
+	<view class="action">
+		<button class="cu-btn bg-green shadow-blur round2" style="width: 100px;height: 30px;" catchtap="search" id="教材">教材</button>
+	</view>
+	<view class="action">
+		<button class="cu-btn bg-green shadow-blur round3" style="width: 100px;height: 30px;" catchtap="search" id="教辅">教辅</button>
+	</view>
+	<view class="action">
+		<button class="cu-btn bg-green shadow-blur round4" style="width: 100px;height: 30px;" catchtap="search" id="文学读物">文学读物</button>
+	</view>
+	<view class="action">
+		<button class="cu-btn bg-green shadow-blur round5" style="width: 100px;height: 30px; margin-top: 10px;" catchtap="search" id="小说">小说</button>
+	</view>
+	<view class="action">
+		<button class="cu-btn bg-green shadow-blur round6" style="width: 100px;height: 30px; margin-top: 10px;" catchtap="search" id="漫画">漫画</button>
+	</view>
+	<view class="action">
+		<button class="cu-btn bg-green shadow-blur round7" style="width: 100px;height: 30px; margin-top: 10px;" catchtap="search" id="其他">其他</button>
+	</view>
+</view>
+
+<!--动态-->
+<view class="cu-bar bg-white solid-bottom">
+	<view class='action'>
+		<text class='cuIcon-titles text-orange '></text>用户使用手册
+	</view>
+</view>
+<view class="cu-card case {{isCard?'no-card':''}}" bindtap="jumpTouser">
+	<view class="cu-item shadow">
+		<view class="image">
+			<image src="http://i1.fuimg.com/722480/9d738dcb17aaeb11.jpg" mode="widthFix"></image>
+			<view class="cu-tag bg-blue">使用手册</view>
+			<view class="cu-bar bg-shadeBottom">
+				<text class="text-cut">北京工业大学二手书籍交流平台</text>
+			</view>
+		</view>
+	</view>
+
+</view>
+<!--<view class="cu-bar bg-white solid-bottom margin-top">
+	<view class='action'>
+		<text class='cuIcon-titles text-orange '></text>最新动态
+	</view>
+</view>
+<view class="cu-card article {{isCard?'no-card':''}}">
+	<view class="cu-item shadow">
+		<view class="title">
+			<view class="text-cut">无意者 烈火焚身;以正义的烈火拔出黑暗。我有自己的正义，见证至高的烈火吧。</view>
+		</view>
+		<view class="content">
+			<image src="https://ossweb-img.qq.com/images/lol/web201310/skin/big10006.jpg" mode="aspectFill"></image>
+			<view class="desc">
+				<view class="text-content"> 折磨生出苦难，苦难又会加剧折磨，凡间这无穷的循环，将有我来终结！真正的恩典因不完整而美丽，因情感而真诚，因脆弱而自由！</view>
+				<view>
+					<view class="cu-tag bg-red light sm round">正义天使</view>
+					<view class="cu-tag bg-green light sm round">史诗</view>
+				</view>
+			</view>
+		</view>
+	</view>
+</view>-->

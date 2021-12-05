@@ -1,0 +1,49 @@
+
+<scroll-view scroll-x class="bg-white nav text-center fixed" style="top:{{CustomBar}}px">
+	<view class="cu-item {{index==TabCur?'text-green cur':''}}" wx:for="{{tabNav}}" wx:key bindtap='tabSelect' data-id="{{index}}">
+		{{tabNav[index]}}
+	</view>	
+</scroll-view>
+<!--全部发布-->
+<block wx:if="{{TabCur==0}}" wx:for='{{ne}}' wx:for-item="item">
+<view class="cu-card article {{isCard?'no-card':''}}">
+  <view class="cu-item shadow">
+    <view class="title">
+      <view class="text-cut">{{item.name}} {{item.author}} </view>
+    </view>
+    <view class="content">
+      <image src="{{imghref}}{{item.imgList}}" mode="aspectFill"></image>
+      <view class="desc">
+			<view class="text-gray">{{item.press}}</view>
+			<view class="text-gray">{{item.newLevel}}</view>
+      <view class='text-gray'>￥{{item.price}}</view>
+        <view>
+          <view class="cu-tag bg-green light sm round">{{item.type}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+</block>
+<!--求购信息-->
+<block wx:if="{{TabCur==1}}" wx:for='{{needs}}' wx:for-item="item">
+	<view class="cu-card article {{isCard?'no-card':''}}">
+		<view class="cu-item shadow">
+			<view class="title">
+				<view class="text-cut">{{item.name}}</view>
+			</view>
+			 
+			<view class="content">
+			<view class="desc">
+				<view class="text-gray"> 作者：  {{item.author}}</view>
+				<view class="text-gray"> 出版社：  {{item.press}}</view>
+				<view class="text-gray">￥{{item.price}}</view>
+				<view class="text-gray">详细信息:  {{item.detail}}</view>
+				<view class="action">
+			<button class="cu-btn line-green round" style="width:70px;height: 30px;">发消息</button>
+		</view>
+			</view>
+			</view>
+		</view>
+	</view>
+</block>
